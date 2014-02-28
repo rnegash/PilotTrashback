@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,6 +27,28 @@ public class RegisterActivity extends Activity {
 		businessTV = (TextView) findViewById(R.id.textView2);
 		adressTV = (TextView) findViewById(R.id.textView3);
 		numberTV = (TextView) findViewById(R.id.textView4);
+
+		nameET.setOnFocusChangeListener(new OnFocusChangeListener() {
+			public void onFocusChange(View arg0, boolean arg1) {
+				nameTV.setText(nameET.getText());
+			}
+		});
+		businessET.setOnFocusChangeListener(new OnFocusChangeListener() {
+			public void onFocusChange(View arg0, boolean arg1) {
+				businessTV.setText(businessET.getText());
+			}
+		});
+		adressET.setOnFocusChangeListener(new OnFocusChangeListener() {
+			public void onFocusChange(View arg0, boolean arg1) {
+				adressTV.setText(adressET.getText());
+			}
+		});
+		numberET.setOnFocusChangeListener(new OnFocusChangeListener() {
+			public void onFocusChange(View arg0, boolean arg1) {
+				numberTV.setText(numberET.getText());
+			}
+		});
+
 	}
 
 	@Override
@@ -34,14 +57,6 @@ public class RegisterActivity extends Activity {
 		getMenuInflater().inflate(R.menu.register, menu);
 		return true;
 	}
-	@Override
-    public boolean onTouchEvent(final MotionEvent event) {
-		nameTV.setText(nameET.getText());
-		businessTV.setText(businessET.getText());
-		adressTV.setText(adressET.getText());
-		numberTV.setText(numberET.getText());
-		return false;
-    }
 
 	public void RegisterButton(View v) {
 		Intent i = new Intent(RegisterActivity.this, MainActivity.class);

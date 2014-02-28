@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 		if (checkMP.isChecked()) {
 			checkedMaterials += "Mixed Paper ";
 		}
-		Toast.makeText(getApplicationContext(), "Message sent to Trashback",
+		Toast.makeText(getApplicationContext(), "Message sent to Trashback to pick up:\n"+checkedMaterials,
 				Toast.LENGTH_LONG).show();
 	}
 
