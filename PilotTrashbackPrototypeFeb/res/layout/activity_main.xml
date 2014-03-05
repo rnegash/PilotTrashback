@@ -40,7 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBox1"
-        android:text="Cardboard" />
+        android:text="Cardboard"
+        android:textColor="@style/AppTheme" />
 
     <CheckBox
         android:id="@+id/checkBox3"
